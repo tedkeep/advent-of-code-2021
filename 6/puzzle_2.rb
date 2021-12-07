@@ -2,10 +2,9 @@ fish = File.readlines('input.txt').map { |l| l.delete("\n").split(',').map(&:to_
 days = 256
 
 (1..days).each do
-  new_fish = {6 => 0}
+  new_fish = {}
   fish.each do |key, val|
-    case key
-    when 0
+    if key.zero?
       new_fish[6] = new_fish[6].to_i + val
       new_fish[8] = new_fish[8].to_i + val
     else
